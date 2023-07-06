@@ -29,7 +29,7 @@ const page = () => {
 	return (
 		<>
 			<Nav />
-			<div className='flex flex-col h-screen justify-center p-16 items-center text-center mx-0 my-0 bg-white-primary-100 '>
+			<div className='flex flex-col h-screen justify-center p-16 items-center text-center mx-0 my-0 bg-yellow-primary-100 '>
 				<form
 					onSubmit={handleSubmit}
 					className='flex flex-col h-1/3 justify-evenly'
