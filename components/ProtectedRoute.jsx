@@ -1,7 +1,5 @@
-
 import { UserAuth } from '../context/AuthContext'
 import { useRouter } from 'next/navigation'
-
 
 const ProtectedRoute = ({ children }) => {
 	const { user } = UserAuth()
@@ -9,13 +7,10 @@ const ProtectedRoute = ({ children }) => {
 
 	if (!user) {
 		return router.push('/')
-		
-		
 	}
 	return children
 }
 
 export default ProtectedRoute
-
 
 // FIX THE DUAL RENDERING OF THE PROFILE COMPONENT!

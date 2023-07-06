@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { UserAuth } from '../context/AuthContext'
-import Nav from '../components/Nav'
+import { UserAuth } from '../../context/AuthContext'
+import Nav from '../../components/Nav'
 
 const page = () => {
 	const { addPost, setNewPost, newPost, user } = UserAuth()
@@ -22,7 +22,7 @@ const page = () => {
 				<form onSubmit={addPost}>
 					<div className='flex flex-col justify-evenly items-center w-full h-5/6 mx-auto'>
 						<label
-							htmlFor='author'
+							htmlFor='Author'
 							className='flex flex-col items-center justify-between w-5/6 '
 						>
 							<span className='font-bold'>Author:</span>

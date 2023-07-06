@@ -3,20 +3,20 @@ import { UserAuth } from '../context/AuthContext'
 import { useRouter } from 'next/navigation'
 
 const Header = () => {
-const { user, posts, newPost } = UserAuth()
-const router = useRouter()
-		const handleCreatePost = () => {
-			if (!user) {
-				console.log('you must be logged in')
-				return (
-					<div>
-						<p>You must be logged in to create a post</p>
-					</div>
-				)
-			}
-			return router.push('/postform')
+	const { user, posts, newPost } = UserAuth()
+	const router = useRouter()
+	const handleCreatePost = () => {
+		if (!user) {
+			console.log('you must be logged in')
+			return (
+				<div>
+					<p>You must be logged in to create a post</p>
+				</div>
+			)
 		}
-  return (
+		return router.push('/postform')
+	}
+	return (
 		<header>
 			<div className='bg-yellow-primary-100 flex flex-col w-full justify-center items-center h-96 text-black-primary-100'>
 				<div className='text-center'>

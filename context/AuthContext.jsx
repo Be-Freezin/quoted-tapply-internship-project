@@ -18,7 +18,7 @@ import {
 	snapshot,
 	deleteDoc,
 } from 'firebase/firestore'
-import defaultPhoto from '../../public/defaultphoto.webp'
+import defaultPhoto from '../public/defaultphoto.webp'
 import { useRouter } from 'next/navigation'
 
 import { auth, db, storage, upload } from '../firebase/config'

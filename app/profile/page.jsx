@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { UserAuth } from '../context/AuthContext'
+import { UserAuth } from '../../context/AuthContext'
 
-import Nav from '../components/Nav'
+import Nav from '../../components/Nav'
 import Image from 'next/image'
 
 import { useRouter } from 'next/navigation'

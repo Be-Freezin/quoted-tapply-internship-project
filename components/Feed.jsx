@@ -5,7 +5,7 @@ import { UserAuth } from '../context/AuthContext'
 import PostCard from './PostCard'
 
 const Feed = () => {
-	const { posts} = UserAuth()
+	const { posts } = UserAuth()
 
 	return (
 		<>

@@ -7,16 +7,12 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { UserAuth } from '../context/AuthContext'
 
-
-
 const SignIn = () => {
 	const { signIn } = UserAuth()
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [error, setError] = useState('')
 	const router = useRouter()
-
-
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
@@ -30,9 +26,6 @@ const SignIn = () => {
 			console.log(e.message)
 		}
 	}
-
-
-
 
 	return (
 		<div className=' text-center '>

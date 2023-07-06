@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react'
-import Nav from '../components/Nav'
+import Nav from '../../components/Nav'
 
 import { useRouter } from 'next/navigation'
-import { UserAuth } from '../context/AuthContext'
+import { UserAuth } from '../../context/AuthContext'
 
 const page = () => {
 	const [email, setEmail] = useState('')
@@ -18,20 +18,22 @@ const page = () => {
 		e.preventDefault()
 		setError('')
 		try {
-			await createUser(email, password, displayName )
-			
+			await createUser(email, password, displayName)
 		} catch (e) {
 			setError(e.message)
 			console.log(e.message)
 		}
-	
+
 		return router.push('/profile')
 	}
 	return (
 		<>
-		<Nav />
+			<Nav />
 			<div className='flex flex-col h-screen justify-center p-16 items-center text-center mx-0 my-0 bg-white-primary-100 '>
-				<form onSubmit={handleSubmit} className='flex flex-col h-1/3 justify-evenly'>
+				<form
+					onSubmit={handleSubmit}
+					className='flex flex-col h-1/3 justify-evenly'
+				>
 					<input
 						type='text'
 						placeholder='Name'

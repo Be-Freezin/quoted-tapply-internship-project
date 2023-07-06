@@ -30,49 +30,43 @@ const PostCard = ({ post, id, authorPhoto }) => {
 		setLikes(post.likesBy.length)
 	}, [user, post])
 
-
-const handleLike = async () => {
-	if (!user) {
-		return
-	}
-
-	const postRef = doc(db, 'articles', post.id)
-	const postDoc = await getDoc(postRef)
-	const postData = postDoc.data()
-
-	let updatedLikesBy
-
-	if (!postData.likesBy) {
-		updatedLikesBy = [user.uid]
-	} else {
-		const userLiked = postData.likesBy.includes(user.uid)
-		if (userLiked) {
-			updatedLikesBy = postData.likesBy.filter((uid) => uid !== user.uid)
-		} else {
-			updatedLikesBy = [...postData.likesBy, user.uid]
+	const handleLike = async () => {
+		if (!user) {
+			return
 		}
-	}
 
-	await updateDoc(postRef, { likesBy: updatedLikesBy })
+		const postRef = doc(db, 'articles', post.id)
+		const postDoc = await getDoc(postRef)
+		const postData = postDoc.data()
 
-	const updatedPosts = posts.map((p) => {
-		if (p.id === post.id) {
-			return {
-				...p,
-				likesBy: updatedLikesBy,
+		let updatedLikesBy
+
+		if (!postData.likesBy) {
+			updatedLikesBy = [user.uid]
+		} else {
+			const userLiked = postData.likesBy.includes(user.uid)
+			if (userLiked) {
+				updatedLikesBy = postData.likesBy.filter((uid) => uid !== user.uid)
+			} else {
+				updatedLikesBy = [...postData.likesBy, user.uid]
 			}
 		}
-		return p
-	})
 
-	setPosts(updatedPosts)
-}
+		await updateDoc(postRef, { likesBy: updatedLikesBy })
 
+		const updatedPosts = posts.map((p) => {
+			if (p.id === post.id) {
+				return {
+					...p,
+					likesBy: updatedLikesBy,
+				}
+			}
+			return p
+		})
 
+		setPosts(updatedPosts)
+	}
 
-
-
-	
 	return (
 		<article
 			key={post.id}
