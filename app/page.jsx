@@ -8,7 +8,7 @@ import SignIn from '../components/SignIn'
 
 export default function Home() {
 	return (
-		<main className='min-h-screen bg-black-primary-80'>
+		<main className='min-h-screen bg-yellow-primary-100'>
 			<Nav signIn={<SignIn />} />
 			<Header />
 			<Feed />

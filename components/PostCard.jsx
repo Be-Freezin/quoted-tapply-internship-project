@@ -70,7 +70,7 @@ const PostCard = ({ post, id, authorPhoto }) => {
 	return (
 		<article
 			key={post.id}
-			className='p-4 w-11/12 lg:w-1/3 text-black-primary-100 border-b-2 mb-5 border-black-primary-100 bg-white-primary-80 rounded odd:bg-white-primary-60'
+			className='p-4 w-11/12 lg:w-1/2 mt-5 text-black-primary-100 border-b-2 mb-5 border-black-primary-100 bg-white-primary-80 rounded odd:bg-white-primary-60'
 		>
 			<span className='text-xl font-bold'>{post.title}</span>
 			<p className='my-4'>{post.body}</p>

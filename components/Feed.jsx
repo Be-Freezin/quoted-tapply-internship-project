@@ -9,7 +9,7 @@ const Feed = () => {
 
 	return (
 		<>
-			<section className='flex flex-col justify-center items-center mt-16'>
+			<section className='flex flex-col justify-center items-center bg-black-primary-100 w-11/12  rounded mx-auto mt-16'>
 				{posts.map((post) => (
 					<PostCard post={post} key={post.id} />
 				))}
