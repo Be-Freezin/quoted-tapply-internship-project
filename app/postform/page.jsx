@@ -17,10 +17,10 @@ const page = () => {
 	return (
 		<>
 			<Nav />
-			<div className='min-h-screen flex flex-col justify-evenly items-center bg-yellow-primary-100  mx-auto'>
-				<h1 className='text-2xl font-bold'>Post a quote!</h1>
+			<div className='min-h-screen flex flex-col justify-evenly items-center bg-yellow-primary-100 text-black-primary-100  mx-auto'>
+				<h1 className='text-4xl font-bold'>Post a quote!</h1>
 				<form onSubmit={addPost}>
-					<div className='flex flex-col justify-evenly items-center w-full h-5/6 mx-auto'>
+					<div className='flex flex-col justify-evenly items-center w-5/6 lg:w-full h-5/6 mx-auto'>
 						<label
 							htmlFor='Author'
 							className='flex flex-col items-center justify-between w-5/6 '
@@ -65,7 +65,7 @@ const page = () => {
 								onChange={(e) =>
 									setNewPost({ ...newPost, body: e.target.value })
 								}
-								className='border-2 border-stone-700 p-1 mb-2 rounded-lg'
+								className='border-2 w-11/12 border-stone-700 p-1 mb-2 rounded-lg'
 							/>
 						</label>
 						<label
